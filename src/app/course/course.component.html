@@ -1,0 +1,39 @@
+<p>course works!</p>
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+<span class="material-icons-outlined"> star_rate </span>
+<span class="material-icons"> star_rate </span>
+<span
+  [class.material-icons]="isFav"
+  [class.material-icons-outlined]="!isFav"
+  (click)="onClick()"
+  >star_rate</span
+>
+
+<table>
+  <tr>
+    <td [attr.colspan]="colspan">This is beatiful</td>
+    <td>Of course it is!!</td>
+  </tr>
+</table>
+<!--[style.backgroundColor]="isActive ? '#17a2b8' : '#ff008a'"-->
+<button
+  class="btn btn-info"
+  [style.backgroundColor]="color"
+  (click)="onSave()"
+  [style.backgroundColor]="color"
+>
+  I Love it
+</button>
+<br />
+<!--<input (keyup.enter)="onKeyUp($event)" />-->
+<input [(ngModel)]="sent" (keyup.enter)="onKeyEnter()" />
+{{ sent | lowercase }}
+<br />
+<input #email (keyup.enter)="onKeyUp(email.value)" />
+{{ number | number : "3.0-3" }}
+{{ money | currency : "INR" }}
+
+<h2>{{ title }}</h2>
+<img [src]="imageUrl" />
